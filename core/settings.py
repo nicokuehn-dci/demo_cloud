@@ -87,9 +87,10 @@ DATABASES = {
         "NAME": os.getenv("POSTGRES_DB"),
         "USER": os.getenv("POSTGRES_USER"),
         "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-    # Use DB_HOST env var when present; default to localhost so `runserver`
-    # works outside of Docker where the Docker service name 'db' may not resolve.
-    # In Docker Compose you typically set DB_HOST='db'.
+        # Use DB_HOST env var when present; default to localhost so `runserver`
+        # works outside of Docker where the Docker service name 'db' may not
+        # resolve.
+        # In Docker Compose set DB_HOST='db'.
         "HOST": os.getenv("DB_HOST", "127.0.0.1"),
         "PORT": os.getenv("POSTGRES_PORT", "5432"),
     }
