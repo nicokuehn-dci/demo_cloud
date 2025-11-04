@@ -28,7 +28,11 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'some-crazy-secret')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG", "True").lower() in ("true", "1", "yes")
 
-ALLOWED_HOSTS = []
+# Allow configuring allowed hosts via environment variable in production.
+# Example: ALLOWED_HOSTS=example.com,*.render.com
+# If not set, default to allowing all hosts (useful for quick deploys) —
+# consider setting a stricter value for production environments.
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 
 # Application definition
