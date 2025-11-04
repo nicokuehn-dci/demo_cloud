@@ -30,8 +30,8 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "True").lower() in ("true", "1", "yes")
 
 # Allow configuring allowed hosts via environment variable in production.
 # Example: ALLOWED_HOSTS=example.com,*.render.com
-# If not set, default to allowing all hosts (useful for quick deploys) —
-# consider setting a stricter value for production environments.
+# If not set, default to allowing all hosts (useful for quick deploys).
+# For production, set ALLOWED_HOSTS to a comma-separated list of hosts.
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 
@@ -87,9 +87,9 @@ DATABASES = {
         "NAME": os.getenv("POSTGRES_DB"),
         "USER": os.getenv("POSTGRES_USER"),
         "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-        # Use DB_HOST env var when present; default to localhost so `runserver`
-        # works outside of Docker where the Docker service name "db" isn't resolvable.
-        # In Docker compose you'll typically set DB_HOST=db so the service name resolves.
+    # Use DB_HOST env var when present; default to localhost so `runserver`
+    # works outside of Docker where the Docker service name 'db' may not resolve.
+    # In Docker Compose you typically set DB_HOST='db'.
         "HOST": os.getenv("DB_HOST", "127.0.0.1"),
         "PORT": os.getenv("POSTGRES_PORT", "5432"),
     }
