@@ -1,0 +1,7 @@
+services:
+  - name: demo-cloud-web
+    type: web
+    env: python
+    branch: main
+    buildCommand: ./build.sh
+    startCommand: gunicorn core.asgi:application -k uvicorn.workers.UvicornWorker
