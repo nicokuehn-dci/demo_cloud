@@ -3,7 +3,7 @@ from .views import StoryView
 from rest_framework.routers import SimpleRouter
 
 router = SimpleRouter()
-router.register('stories', StoryView, basename='story')
+router.register("stories", StoryView, basename="story")
 
 urlpatterns = [
     # path('stories/', StoryView.as_view()),

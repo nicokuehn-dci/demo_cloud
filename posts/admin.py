@@ -4,5 +4,5 @@ from .models import Story
 
 @admin.register(Story)
 class StoryAdmin(admin.ModelAdmin):
-	list_display = ("id", "title")
-	search_fields = ("title",)
+    list_display = ("id", "title")
+    search_fields = ("title",)
