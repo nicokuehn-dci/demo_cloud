@@ -1,0 +1,19 @@
+# Ignore Python and environment artifacts
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+
+# Environment / secrets
+.env
+
+# SQLite local DB
+*.sqlite3
+
+# Editor/temp files
+.vscode/
+*.swp
+
+# Django static files (collected) - keep if you prefer committed static
+/staticfiles/
